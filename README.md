@@ -23,6 +23,9 @@ import (
 
 func main() {
 	m := mhz19.MHZ19{}
+	if err := m.Connect(); err != nil {
+		log.Fatal(err)
+	}
 	v, err := m.ReadCO2()
 	if err != nil {
 		log.Fatal(err)
