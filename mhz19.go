@@ -10,8 +10,8 @@ type MHZ19 struct {
 	port *serial.Port
 }
 
-func (m *MHZ19) Connect() error {
-	c := &serial.Config{Name: "/dev/ttyS0", Baud: 9600}
+func (m *MHZ19) Connect(devicePath string) error {
+	c := &serial.Config{Name: devicePath, Baud: 9600}
 	p, err := serial.OpenPort(c)
 	if err != nil {
 		return err
