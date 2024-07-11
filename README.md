@@ -23,7 +23,7 @@ import (
 
 func main() {
 	m := mhz19.MHZ19{}
-    myDevicePath := "/dev/ttyS0"
+	myDevicePath := "/dev/ttyS0"
 	if err := m.Connect(myDevicePath); err != nil {
 		log.Fatal(err)
 	}
