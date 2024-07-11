@@ -23,7 +23,8 @@ import (
 
 func main() {
 	m := mhz19.MHZ19{}
-	if err := m.Connect(); err != nil {
+    myDevicePath := "/dev/ttyS0"
+	if err := m.Connect(myDevicePath); err != nil {
 		log.Fatal(err)
 	}
 	v, err := m.ReadCO2()
